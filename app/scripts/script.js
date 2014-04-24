@@ -16,7 +16,7 @@ var ext = (function extension(){
 
           if (msg.action == 'create_image') {
             if (msg.src != null){
-
+              console.log(msg.src);
               ext.createImage(msg.src, sendResponse);
 
             }
@@ -35,7 +35,7 @@ var ext = (function extension(){
 
     createImage: function(src){
 
-      var vid = document.querySelector('video>source[src="' + src + '"]' ).parentNode,
+      var vid = document.querySelector('video>source[src*="' + src + '"]' ).parentNode,
           can = document.getElementById(canvasTime),
           con = can.getContext('2d');
           can.width = vid.offsetWidth;

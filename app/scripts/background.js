@@ -8,9 +8,10 @@ chrome.contextMenus.create({
         "title": "Save Video Frame",
         "contexts": ["video"],
         "onclick": function(e) {
-
-          var url = e.srcUrl.slice(e.pageUrl.length);
+          console.log(e);
+          var url = e.srcUrl.match(/[^/]+$/);
           chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+
             chrome.tabs.sendMessage(tabs[0].id, {action: "create_image", src: url}, function(response) {});
           });
         }
