@@ -9,13 +9,12 @@
     },
     "default_locale": "en",
     "background": {
-        "scripts": [
-            "scripts/background.js"
-        ]
+        "page": "pages/background.html"
     },
     "permissions": [
         "tabs",
         "contextMenus"
+
     ],
     "content_scripts": [
         {
@@ -24,6 +23,7 @@
                 "http://*/*",
                 "https://*/*"
             ],
+            "all_frames": true,
             "css": [
                 "styles/main.css"
             ],
