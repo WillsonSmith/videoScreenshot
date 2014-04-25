@@ -8,7 +8,7 @@ chrome.contextMenus.create({
         "title": "Save Video Frame",
         "contexts": ["video"],
         "onclick": function(e) {
-          console.log(e);
+          
           var url = e.srcUrl.match(/[^/]+$/);
           var fullUrl = e.srcUrl;
 

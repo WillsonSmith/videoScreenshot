@@ -83,8 +83,6 @@ var ext = (function extension(){
         video = document.querySelector('video>source[src*="' + msg.src + '"]' ).parentNode;
         time = video.currentTime;
 
-        console.log(time);
-
         if (msg.action == 'create_image') {
           if (msg.src != null){
 
@@ -121,12 +119,6 @@ var ext = (function extension(){
       var vid = document.querySelector('video>source[src*="' + src + '"]' ).parentNode,
           can = document.getElementById(canvasTime),
           con = can.getContext('2d');
-
-          console.log(vid);
-          //vid.addEventListener('loadeddata', function() {
-
-
-      // it's loaded
 
               can.width = vid.offsetWidth;
               can.height = vid.offsetHeight;
