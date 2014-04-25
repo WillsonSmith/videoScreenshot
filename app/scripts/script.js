@@ -53,17 +53,19 @@ var ext = (function extension(){
 
       if (window.self !== window.top) {
 
-        video = document.querySelector('video');
-        base = document.querySelector('video').querySelector('source').src;
-        url = base.match(/[^/]+$/);
+        if (document.querySelector('video') != null){
+          video = document.querySelector('video');
+          base = document.querySelector('video').querySelector('source').src;
+          url = base.match(/[^/]+$/);
 
-        video.pause();
+          video.pause();
 
-        video.addEventListener('canplay', function(){
+          video.addEventListener('canplay', function(){
 
-          ext.createImage(url, base);
+            ext.createImage(url, base);
 
-        }, false)
+          }, false)
+        }
 
         //ext.createImage(url, base);
 
